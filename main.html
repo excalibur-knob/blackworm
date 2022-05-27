@@ -2,21 +2,25 @@
 
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta  http-equiv="Content-Type" content="text/html; charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://use.fontawesome.com/">
     </head>
     <body>
         <div class="container">
-            <div class="button">    
-                <button id="urlBtn" >URL</button>
-                <button id="srchBtn">SEARCH</button>
+            <div class="buttons">    
+                <button id="urlBtn" class="active">URL</button>
+                <button id="srchBtn" class="">SEARCH</button>
             </div>
-    
+            <picture>
+          <img class="srchIcon" src="assets/seo.png">
+          <img class="scanIcon" src="assets/scan.png">
+        </picture>
         <div class="inputs">
             <form>
                 <input type="search" id="input1" name="input1" placeholder="Search or scan a URL">
