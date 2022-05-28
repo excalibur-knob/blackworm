@@ -43,7 +43,7 @@ button[type="submit"] {
     margin: auto;
     width: 7.5in;
     height:4in;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     padding: 10px;
     flex: 1 1 150px;
     
@@ -52,7 +52,7 @@ button[type="submit"] {
     margin: auto;
     width: 40%;
     padding: 10px;
-    margin-top:90px;
+    margin-top:50px;
 }
 form {
     border: none;
@@ -84,14 +84,14 @@ button:hover{
 .srchIcon{
   margin-left:3.3in;
   display:block;
-  width:60px;
-  height:60px;
+  width:70px;
+  height:70px;
 }
 .scanIcon{
   margin-left:3.3in;
   display:none;
-  width:60px;
-  height:60px;
+  width:70px;
+  height:70px;
 }
 .view{
   position: relative;
@@ -108,7 +108,8 @@ button:hover{
   flex-flow: row wrap;
   padding: 10px 10px 10px 10px;
   color: #2f2f2f;
-  background-color: rgb(243, 243, 243);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  background-color: #fdfdfd;
   width:100%;
   margin:auto 0;
   position:fixed;
@@ -128,7 +129,7 @@ button:hover{
 
 .footer__logo {
   font-weight: 400;
-  text-transform: lowercase;
+  text-transform: uppercase;
   font-size: 1.5rem;
 }
 
