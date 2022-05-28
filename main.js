@@ -7,16 +7,16 @@ let scanIcon = document.querySelector(".scanIcon")
 urlBtn.onclick = () => {
     srchIcon.style.display = "block";
     scanIcon.style.display = "none"
-    urlBtn.classList.toggle("active")
-    srchBtn.classList.toggle("active")
+    urlBtn.className = "active"
+    srchBtn.className = ""
     inp1.style.display = "block";
     inp2.style.display = "none";
 }
 srchBtn.onclick = () => {
     srchIcon.style.display = "none";
     scanIcon.style.display = "block"
-    srchBtn.classList.toggle("active")
-    urlBtn.classList.toggle("active")
+    urlBtn.className = ""
+    srchBtn.className = "active"
     inp1.style.display = "none";
     inp2.style.display = "block";
 }

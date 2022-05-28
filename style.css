@@ -40,13 +40,13 @@ button[type="submit"] {
     opacity: 1;
   }
 .container{
-    position: relative;
-    top: 3in;
     margin: auto;
-    width: 40%;
+    width: 7.5in;
     height:4in;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 10px;
+    flex: 1 1 150px;
+    
 }
 .inputs{
     margin: auto;
@@ -95,4 +95,9 @@ button:hover{
   display:none;
   width:60px;
   height:60px;
+}
+.view{
+  position: relative;
+  top:3in;
+  width:100%
 }
