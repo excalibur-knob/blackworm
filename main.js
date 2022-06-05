@@ -4,6 +4,8 @@ let inp1 = document.querySelector("#input1")
 let inp2 = document.querySelector("#input2")
 let srchIcon = document.querySelector(".srchIcon")
 let scanIcon = document.querySelector(".scanIcon")
+let subBtn = document.querySelector("#sub")
+let loader = document.querySelector(".loader")
 urlBtn.onclick = () => {
     srchIcon.style.display = "block";
     scanIcon.style.display = "none"
@@ -36,7 +38,34 @@ const navSlide = () => {
             }
         })
     })
-    
 }
 navSlide();
  
+
+//worker
+if(inp1.value != " "){
+    subBtn.onclick = (e) => {
+    e.preventDefault()
+    loader.style.display = "inline-block"
+    let worker = new Worker('worker.js')
+    worker.postMessage(inp1.value)
+    console.log("sent")
+    worker.onmessage = (e) => {
+    loader.style.display = "none"
+    console.log(e.data)
+        }
+    }
+}
+if(inp2.value != " "){
+    subBtn.onclick = (e) => {
+    e.preventDefault()
+    loader.style.display = "inline-block"
+    let worker = new Worker('worker.js')
+    worker.postMessage(inp2.value)
+    console.log("sent")
+    worker.onmessage = (e) => {
+    loader.style.display = "none"
+    console.log(e.data)
+            }
+        }
+    }
