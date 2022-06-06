@@ -1,15 +1,34 @@
-let succeed = true;
-let failed = false;
+
+
 onmessage = function(e) {
- 
-     let database = ["blackworm.com"]
-     for(let i = 0;i<100000;i++){
-         console.log(i)
-     }
-    console.log(e.data)
-  if(e.data == database[0]){
-    postMessage(failed)
-  }else{
-    postMessage(succeed)
-  }
+     let finished =false
+     let notFound = false
+     let validSites= ["youtube.com"]
+     let notValidSites=["blackworm.com"]
+    //  for(let i = 0;i<100000;i++){
+    //      console.log(i)
+    //  }
+   validSites.forEach(element=>{
+     
+    if(e.data.includes(element)){
+      console.log(element)
+      finished=true;
+      this.postMessage("Valid")
+    }else{
+      notFound=true
+    }
+   })
+   if(!finished){
+     notValidSites.forEach(element=>{
+       if(e.data.includes(element)){
+        console.log(element)
+         finished = true
+         notFound=false
+         this.postMessage("NotValid")
+       }
+     })
+   }
+   if(notFound==true){
+     this.postMessage("Not Found")
+   }
 }

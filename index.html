@@ -43,18 +43,19 @@
                 <button id="urlBtn" class="active">URL</button>
                 <button id="srchBtn" class="">SEARCH</button>
             </div>
-            <picture>
+            <picture class="s" id="pic">
           <img class="srchIcon" src="assets/seo.png">
           <img class="scanIcon" src="assets/scan.png">
         </picture>
         <div class="inputs">
+          
             <form>
-                <input type="search" id="input1" name="input1" placeholder="Search or scan a URL">
-                
+                <input type="url"    pattern="https?://.+" id="url" name="url" placeholder="Search or scan a URL" title="Please enter URL or IP" autocomplete="off">
                 <button type="submit" id="sub">Search</button>
             </form>
             <div class="loader"><div></div><div></div><div></div></div>
         </div>
+        <div class="text"><p class="txt"></p></div>
         
         <svg id="failureAnimation" viewBox="0 0 70 70" width="80"
         height="80">
@@ -66,7 +67,7 @@
           <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
           </div>
         </div>
-    
+       
     </div>
     <footer class="footer">
         <div class="footer__addr">

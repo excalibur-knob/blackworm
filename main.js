@@ -1,16 +1,40 @@
 let urlBtn = document.querySelector("#urlBtn")
 let srchBtn = document.querySelector("#srchBtn")
-let inp1 = document.querySelector("#input1")
+let inp1 = document.querySelector("#url")
 let srchIcon = document.querySelector(".srchIcon")
 let scanIcon = document.querySelector(".scanIcon")
 let subBtn = document.querySelector("#sub")
 let loader = document.querySelector(".loader")
 let failure = document.querySelector("#failureAnimation")
 let success = document.querySelector(".success-animation")
+let pictureContainer = document.querySelector("#pic")
+let container = document.querySelector(".container")
+let inputs = document.querySelector(".inputs")
+let text = document.querySelector(".text")
 let url = true
 let srch = false
+let clickedOnBody = false;
 let worker1 = new Worker('worker1.js')
+
+document.addEventListener('click', function(event) {
+    let isClickInsideElement = inputs.contains(event.target);
+    if (!isClickInsideElement) {
+        pictureContainer.style.display = "block"
+        inp1.style.display = "block"
+        subBtn.style.display = "block"
+        success.style.display="none"
+        failure.style.display="none"
+        text.style.display="none"
+        inp1.value=""
+        text.innerHTML=""
+        clickedOnBody = true
+    }
+});
 urlBtn.onclick = (e) => {
+    inp1.placeholder = "Search or scan a URL"
+    url=true
+    srch= false
+    inp1.style.display = "block"
     srchIcon.style.display = "block";
     scanIcon.style.display = "none"
     urlBtn.className = "active"
@@ -18,22 +42,29 @@ urlBtn.onclick = (e) => {
     inp1.style.display = "block";
     failure.style.display = "none"
     success.style.display = "none"
+    subBtn.style.display = "block"
+    pictureContainer.style.display = "block"
     inp1.value=""
-    inp1.placeholder = "Search or scan a URL"
-    url=true
-    srch= false
+    text.style.display="none"
+    text.innerHTML=""
+
 }
 srchBtn.onclick = (e) => {
-    srchIcon.style.display = "none";
-    scanIcon.style.display = "block"
-    inp1.value=""
-    urlBtn.className = ""
-    srchBtn.className = "active"
-    failure.style.display = "none"
-    success.style.display = "none"
     inp1.placeholder = "URL,IP address, domain or file hash"
     url=false
     srch=true
+    inp1.style.display = "block"
+    srchIcon.style.display = "none";
+    scanIcon.style.display = "block"
+    inp1.value=""
+    subBtn.style.display = "block"
+    pictureContainer.style.display = "block"
+    urlBtn.className = ""
+    srchBtn.className = "active"
+    text.style.display="none"
+    failure.style.display = "none"
+    success.style.display = "none"
+    text.innerHTML=""
 }
 
 //navbar code
@@ -57,11 +88,47 @@ navSlide();
 
 //worker
     //url
-    
+    const badSite = () => {
+        let i = 0;
+        text.innerHTML=""
+        console.log(text.innerHTML)
+        let txt = `${inp1.value} დომეინი არის დაფიქსირებული ჰაკერულ აქტივობებში,
+        რომელიც განხორციელებული იყო 2022 წლის 15 აპრილს საქართველოს მოსახლეობის წინააღმდეგ 
+        და მოიცავდა შეტევას საბანკო რეკვიზიტების მოთხოვნასთან დაკავშირებით`;
+        let speed = 10;
+  function typeWriter() {
+  if (i < txt.length) {
+    text.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+console.log(text.innerHTML)
+typeWriter();
+}
+
+    const validSite = () => {
+    let i = 0;
+    text.innerHTML=""
+    let txt = `${inp1.value} დომეინი სუფთაა`;
+    let speed = 10;
+        function typeWriter() {
+            if (i < txt.length) {
+                text.innerHTML += txt.charAt(i);
+                    i++;
+            setTimeout(typeWriter, speed);
+            }
+        }
+    typeWriter();
+}
+
+
+
 if(url==true&&srch==false){
     subBtn.onclick = (e) => {
         e.preventDefault()
-         worker1.postMessage(inp1.value)
+        text.innerHTML=""
+        worker1.postMessage(inp1.value)
         failure.style.display = "none"
         success.style.display = "none"
         loader.style.display = "inline-block"
@@ -69,32 +136,59 @@ if(url==true&&srch==false){
         worker1.onmessage = (e) => {
         loader.style.display = "none"
         console.log(e.data)
-        if(e.data==true){
+        pictureContainer.style.display = "none"
+        inp1.style.display = "none"
+        subBtn.style.display = "none"
+        success.style.top = "-80px"
+        failure.style.top = "-80px"
+        if( e.data == "Not Found"){
+            text.style.display = "block"
+            text.innerHTML = "Not Found"
+         }
+        if(e.data=="Valid"){
             success.style.display = "block"
-            
-        }else{
+            text.style.display = "block"
+            validSite();
+
+        } if(e.data=="NotValid"){
             failure.style.display = "block"
+            text.style.display = "block"
+            badSite();
         }
                 }
             }
         }
     
-    if(srch==true&&url==false){
+if(srch==true&&url==false){
     subBtn.onclick = (e) => {
-        console.log(inp1.value)
+        text.innerHTML=""
         e.preventDefault()
-    failure.style.display = "none"
-    success.style.display = "none"
-    
-    loader.style.display = "inline-block"
-    worker1.postMessage(inp1.value)
-    worker1.onmessage = (e) => {
-    loader.style.display = "none"
-    if(e.data==true){
-        success.style.display = "block"
-    }else{
-        failure.style.display = "block"
-    }
+        failure.style.display = "none"
+        success.style.display = "none"
+        loader.style.display = "inline-block"
+        worker1.postMessage(inp1.value)
+        worker1.onmessage = (e) => {
+        loader.style.display = "none"
+        pictureContainer.style.display = "none"
+        inp1.style.display = "none"
+        subBtn.style.display = "none"
+        success.style.top = "-80px"
+        failure.style.top = "-80px"
+        writer();
+        if( e.data == "Not Found"){
+            text.style.display = "block"
+            text.innerHTML = "Not Found"
+         }
+        if(e.data=="Valid"){
+            success.style.display = "block"
+            text.style.display = "block"
+            validSite();
+
+        } if(e.data=="NotValid"){
+            failure.style.display = "block"
+            text.style.display = "block"
+            badSite();
         }
-    }
+        }
+     }
     }
