@@ -10,7 +10,7 @@
     display:none;
 }
 .active{
-  border-bottom:2px solid #fe017e !important; 
+  border-bottom:2px solid #3b30d8 !important; 
   
 }
 input[type="url"]{
@@ -47,7 +47,7 @@ button[type="submit"] {
     margin: auto;
     width: 7.5in;
     height:4in;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     padding: 10px;
     flex: 1 1 150px;
     
@@ -83,7 +83,7 @@ font-weight: bolder;
 }
 button:hover{
     cursor: pointer;
-    color:#fe017e
+    color:#3b30d8;
 }
 .srchIcon{
   margin-left:3.3in;
@@ -111,7 +111,8 @@ nav{
   min-height: 8vh;
   background-color: white;
   z-index:1;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  
 }
 .logo{
   color:black;
@@ -135,7 +136,7 @@ nav{
   font-size: 14px;
 }
 .nav-links a:hover{
-  color:#fe017e
+  color:#3b30d8
 }
 .drop{
   display:none;

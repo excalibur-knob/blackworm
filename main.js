@@ -91,10 +91,18 @@ navSlide();
     const badSite = () => {
         let i = 0;
         text.innerHTML=""
-        console.log(text.innerHTML)
-        let txt = `${inp1.value} დომეინი არის დაფიქსირებული ჰაკერულ აქტივობებში,
+        let data = inp1.value.toLowerCase();
+        console.log(inp1.value)
+        let txt;
+        if(data == "stepn-eventos.com"){
+            txt = `${inp1.value} არის სტეპენის ფიშინგ ვებსაიტი, რომელიც მიმართული იყო 
+            facebook-ის ფიშინგ კამპანიაში`;
+        }
+        if(data == "virus.com"){
+         txt = `${inp1.value} დომეინი არის დაფიქსირებული ჰაკერულ აქტივობებში,
         რომელიც განხორციელებული იყო 2022 წლის 15 აპრილს საქართველოს მოსახლეობის წინააღმდეგ 
         და მოიცავდა შეტევას საბანკო რეკვიზიტების მოთხოვნასთან დაკავშირებით`;
+        }
         let speed = 10;
   function typeWriter() {
   if (i < txt.length) {
@@ -102,8 +110,11 @@ navSlide();
     i++;
     setTimeout(typeWriter, speed);
   }
+  
 }
-console.log(text.innerHTML)
+document.addEventListener('click', e =>{
+    clearTimeout(typeWriter)
+})
 typeWriter();
 }
 

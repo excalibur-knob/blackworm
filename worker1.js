@@ -2,32 +2,33 @@
 
 onmessage = function(e) {
      let finished =false
-     let notFound = false
-     let validSites= ["youtube.com"]
-     let notValidSites=["blackworm.com"]
+     let notFound = true
+     let data = e.data.toLowerCase()
+     let validSites= ["youtube.com","facebook.com"]
+     let notValidSites=["virus.com","stepn-eventos.com"]
     //  for(let i = 0;i<100000;i++){
     //      console.log(i)
     //  }
+    console.log("logged  " + data)
    validSites.forEach(element=>{
-     
-    if(e.data.includes(element)){
+    if(data.includes(element)){
       console.log(element)
       finished=true;
+      notFound=false
       this.postMessage("Valid")
-    }else{
-      notFound=true
     }
    })
    if(!finished){
      notValidSites.forEach(element=>{
-       if(e.data.includes(element)){
-        console.log(element)
+       if(data.includes(element)){
+       // console.log(element)
          finished = true
          notFound=false
          this.postMessage("NotValid")
        }
      })
    }
+   console.log(notFound)
    if(notFound==true){
      this.postMessage("Not Found")
    }
