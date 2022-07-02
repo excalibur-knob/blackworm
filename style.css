@@ -9,6 +9,9 @@
 #input2{
     display:none;
 }
+.text{
+color:white;
+}
 .active{
   border-bottom:2px solid #3b30d8 !important; 
   
@@ -19,6 +22,12 @@ input[type="url"]{
     border:none;
     border-bottom: 2px solid gray;
     outline: none;
+    background: none;
+    caret-color: white;
+    color:white;
+}
+input[type="url"]::placeholder{
+  color:white;
 }
 form {
   
@@ -42,7 +51,7 @@ button[type="submit"] {
    
   }
   button[type="submit"]:hover {
-   
+    background-color:white;
   }
 .container{
     position: relative;
@@ -50,8 +59,8 @@ button[type="submit"] {
     margin: auto;
     width: 8in;
     height:5in;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: #fdfdfd;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color:#2f2f2f;
     padding: 10px;
     flex: 1 1 150px;
     z-index:3;
@@ -79,12 +88,14 @@ padding:20px 50px 20px 50px;
 border:none;
 width: 50%;
 display: flex;
+
 }
 .buttons button{
+color:white;
 padding:20px 50px 20px 50px;
 width:2in;
 border:none;
-background-color: rgb(250, 249, 249);
+background-color: rgb(44, 43, 43);
 font-size: 15px;
 font-weight: bolder;
 }
@@ -110,7 +121,7 @@ button:hover{
   width:100%;
   height:8in;
   z-index: 0;
-
+  background-color: #2f2f2f;
 }
 
 /*top bar*/
@@ -119,13 +130,13 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: white;
+  background-color: #2f2f2f;
   z-index:1;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: rgb(216, 216, 216) 0px 1px 3px, rgba(202, 202, 202, 0.822) 0px 1px 2px;
   
 }
 .logo{
-  color:black;
+  color:rgb(255, 255, 255);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 20px;
@@ -139,7 +150,7 @@ nav{
   list-style: none;
 }
 .nav-links a{
-  color:black;
+  color:rgb(255, 255, 255);
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
@@ -219,9 +230,9 @@ transform:translateX(0px);
   display: flex;
   flex-flow: row wrap;
   padding: 0px 10px 10px 10px;
-  color: #2f2f2f;
+  color: white;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  background-color: #fdfdfd;
+  background-color: #2f2f2f;
   width:100%;
   margin:auto 0;
   position:fixed;
@@ -267,7 +278,7 @@ transform:translateX(0px);
   justify-content: center;
   height: 36px;
   max-width: max-content;
-  background-color: rgb(33, 33, 33, 0.07);
+  background-color: white;
   border-radius: 100px;
   color: #2f2f2f;
   line-height: 0;
