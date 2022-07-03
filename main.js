@@ -115,6 +115,13 @@ const badSite = () => {
     if (data == "spin2money.cc") {
         txt = `${inp1.value} არის ფიშინგ ვებსაიტი, რომელსაც იყენებდნენ 2019 წელს`
     }
+    if(data == "winrichjobs.com"){
+        txt = `${inp1.value} ფიშინგ საიტი, +49.68416984300 ნომერი,რომელიც უშუალოდ დაკავშირებულია დომეინთან არის კიდევ კავშირში
+        სხვადასხვა დომეინებთან, რომლებიც ფიშინგში იყვნენ ჩართულნი: 
+        combeding.com,
+         adingltd.com,
+        `
+    }
     let speed = 10;
     function typeWriter() {
         if (i < txt.length) {

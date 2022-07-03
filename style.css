@@ -13,7 +13,7 @@
 color:white;
 }
 .active{
-  border-bottom:2px solid #3b30d8 !important; 
+  border-bottom:2px solid white !important; 
   
 }
 input[type="url"]{
@@ -101,7 +101,7 @@ font-weight: bolder;
 }
 button:hover{
     cursor: pointer;
-    color:#3b30d8;
+    color:#77707083;
 }
 .srchIcon{
   margin-left:3.3in;
@@ -157,7 +157,7 @@ nav{
   font-size: 14px;
 }
 .nav-links a:hover{
-  color:#3b30d8
+  color:#77707083;
 }
 .drop{
   display:none;

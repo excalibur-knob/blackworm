@@ -5,7 +5,7 @@ onmessage = function (e) {
         .data
         .toLowerCase()
     let validSites = ["youtube.com", "facebook.com"]
-    let notValidSites = ["virus.com", "stepn-eventos.com", "spin2money.cc"]
+    let notValidSites = ["virus.com", "stepn-eventos.com", "spin2money.cc","winrichjobs.com"]
     //  for(let i = 0;i<100000;i++){      console.log(i)  }
     console.log("logged  " + data)
     validSites.forEach(element => {
