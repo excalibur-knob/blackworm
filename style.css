@@ -6,6 +6,9 @@
     margin:0;
     padding:0;
 }
+body{
+  overflow:hidden;
+}
 #input2{
     display:none;
 }
@@ -166,7 +169,7 @@ nav{
 .drop div{
 width:25px;
 height:3px;
-background-color:black;
+background-color:rgb(255, 255, 255);
 margin:5px;
 }
 @media screen and (max-width:1024px){
@@ -191,12 +194,12 @@ margin:5px;
    right:0px;
    height:92vh;
    top:8vh;
-   background-color: white;
-   display:flex;
+   background-color: #2f2f2f;
+   display:none;
    flex-direction: column;
    align-items: center;
    width:50%;
-   color:black;
+   color:rgb(255, 255, 255);
    transform:translateX(500%);
    transition: transform 0.8s ease-in;
    z-index:1;
@@ -210,6 +213,7 @@ margin:5px;
 }
 .nav-active{
   transform:translateX(0%);
+  display:flex;
 }
 @keyframes navLinkFade{
   from{
@@ -360,6 +364,7 @@ transform:translateX(0px);
     flex: 2 0px;
   }
 }
+
 /*loading*/
 .loader {
   display: none;
@@ -670,4 +675,15 @@ transform:translateX(0px);
       border-radius: 50%;
   }
 
+}
+
+/*media queries*/
+@media screen and (max-width: 640px) {
+  html {
+    overflow: hidden;
+    height: 100%;
+}
+  .footer{
+    display:none;
+  }
 }
